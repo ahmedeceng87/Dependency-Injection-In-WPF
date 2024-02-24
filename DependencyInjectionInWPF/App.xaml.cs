@@ -13,7 +13,9 @@ namespace DependencyInjectionInWPF
             IServiceCollection services = new ServiceCollection();
             services.AddSingleton<MainWindow>();
             services.AddTransient<IDataAccess, DataAccess>();
-            serviceProvider = services.BuildServiceProvider();           
+            services.AddTransient<ChildWindow>();            
+            serviceProvider = services.BuildServiceProvider();
+            services.AddSingleton<IServiceProvider>(serviceProvider);
         }
 
         protected override void OnStartup(StartupEventArgs e)
