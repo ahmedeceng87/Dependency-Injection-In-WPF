@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using DataAccessLibrary;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 namespace DependencyInjectionInWPF
@@ -11,6 +12,7 @@ namespace DependencyInjectionInWPF
         {
             IServiceCollection services = new ServiceCollection();
             services.AddSingleton<MainWindow>();
+            services.AddTransient<IDataAccess, DataAccess>();
             serviceProvider = services.BuildServiceProvider();           
         }
 

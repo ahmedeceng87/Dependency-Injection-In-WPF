@@ -1,8 +1,29 @@
-﻿<Window x:Class="DependencyInjectionInWPF.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Dependency Injection In WPF" Height="450" Width="800">
-    <Grid>
-
+﻿<Window
+    x:Class="DependencyInjectionInWPF.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Dependency Injection In WPF"
+    Width="800"
+    Height="450">
+    <Grid VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            x:Name="tbData"
+            Height="25"
+            FontSize="13"
+            FontWeight="SemiBold"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+        <Button
+            Grid.Row="1"
+            Height="25"
+            Width="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="OnGetDataClick"
+            Content="GetData" />
     </Grid>
 </Window>
